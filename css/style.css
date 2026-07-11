@@ -1161,7 +1161,9 @@ footer {
         left: -100%;
         top: 80px;
         flex-direction: column;
-        background-color: var(--bg-primary);
+        background-color: rgba(3, 8, 20, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         width: 100%;
         text-align: center;
         transition: 0.3s ease;
@@ -1266,6 +1268,28 @@ footer {
         grid-template-columns: 1fr;
         gap: 0;
     }
+    
+    /* Mobile overrides for inline bento blocks in clubs.html */
+    section .container > div[style*="min-height"] {
+        padding: 2rem !important;
+        min-height: 350px !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    
+    section .container > div[style*="min-height"] > div:last-child {
+        text-align: center !important;
+        padding-top: 1.5rem !important;
+    }
+    
+    /* Smaller hero text on mobile */
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1367,4 +1391,46 @@ footer {
 .card, .price-card, .schedule-table th, .contact-info-icon, .form-control, .map-placeholder, .sticky-scroll-section, .footer-grid, footer {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+}
+
+/* Page Transition Loader */
+.page-loader {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: rgba(3, 8, 20, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.page-loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.page-loader .loader-logo {
+    max-width: 180px;
+    margin-bottom: 25px;
+    animation: loaderPulse 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes loaderPulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(197, 155, 108, 0.2)); }
+    100% { transform: scale(1.1); filter: drop-shadow(0 0 25px rgba(197, 155, 108, 0.6)); }
+}
+
+.page-loader .loader-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }

@@ -1,4 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Page Transition Loader
+    const loaderHTML = `
+        <div id="pageTransitionLoader" class="page-loader">
+            <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="loader-logo">
+            <h2 class="loader-text" id="loaderDestText">Chargement...</h2>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('afterbegin', loaderHTML);
+    const pageLoader = document.getElementById('pageTransitionLoader');
+    const loaderText = document.getElementById('loaderDestText');
+
+    // Fade out on initial load
+    setTimeout(() => {
+        pageLoader.classList.add('hide');
+    }, 400);
+
+    // Handle link clicks for transitions
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetUrl = this.getAttribute('href');
+            
+            // Ignore links that shouldn't trigger the loader
+            if (!targetUrl || 
+                targetUrl.startsWith('#') || 
+                targetUrl.startsWith('tel:') || 
+                targetUrl.startsWith('mailto:') ||
+                this.getAttribute('target') === '_blank' ||
+                e.ctrlKey || e.metaKey) {
+                return;
+            }
+
+            e.preventDefault();
+
+            // Determine page name for the loader
+            let destName = this.textContent.trim();
+            if (!destName || destName.length > 20 || this.querySelector('img') || this.querySelector('svg')) {
+                if(targetUrl.includes('clubs.html')) destName = "Le Club";
+                else if(targetUrl.includes('disciplines.html')) destName = "Disciplines";
+                else if(targetUrl.includes('planning.html')) destName = "Plannings";
+                else if(targetUrl.includes('contact.html')) destName = "Contact";
+                else if(targetUrl.includes('index.html') || targetUrl === '/' || targetUrl === './') destName = "Accueil";
+                else destName = "Chargement...";
+            }
+
+            loaderText.textContent = destName;
+            pageLoader.classList.remove('hide');
+
+            // Wait for transition then navigate
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 600);
+        });
+    });
+
+    // Also handle pages served from cache (Safari/bfcache)
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted && pageLoader) {
+            pageLoader.classList.add('hide');
+        }
+    });
     // 1. Header scroll effect
     const header = document.querySelector('header');
     const handleScroll = () => {
