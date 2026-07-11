@@ -1206,49 +1206,51 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Restore PC Sticky Scroll Effect on Mobile (Side-by-Side) */
+    /* Interleaved Mobile Layout (Standard Cards) */
     .sticky-scroll-section {
-        padding: 2rem 0;
+        padding: 3rem 0;
     }
     .sticky-scroll-container {
         display: flex;
-        flex-direction: row; /* Force l'affichage côte à côte comme sur PC */
-        gap: 1rem; /* Réduit l'espace pour que ça rentre */
+        flex-direction: column;
+        gap: 0;
     }
-    .sticky-media-col {
-        flex: 1;
-        position: sticky;
-        top: 100px; /* Sous le header */
-        height: 60vh; /* Hauteur adaptée au mobile */
-        z-index: 1;
+    .sticky-media-col, .media-frame, .scrolling-content-col {
+        display: contents; /* Aplati la hiérarchie DOM pour le layout flex */
     }
-    .media-frame {
-        height: 100%;
-        border-radius: var(--border-radius-sm);
-    }
-    .scrolling-content-col {
-        flex: 1.2;
-        z-index: 2;
+    .sticky-img {
+        position: relative !important;
+        opacity: 1 !important;
+        transform: none !important;
+        height: 250px !important;
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius-md);
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
     }
     .content-slide {
-        min-height: 100vh; /* Pour le déclenchement du scroll */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 1rem 0;
+        min-height: auto !important;
+        padding: 0 0 2rem 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         opacity: 1 !important;
+    }
+    .content-slide:last-child {
         border-bottom: none;
     }
-    .slide-title {
-        font-size: 1.6rem; /* Texte plus petit pour rentrer dans la colonne */
-        word-wrap: break-word;
-    }
-    .slide-desc {
-        font-size: 0.95rem;
-    }
-    .slide-link {
-        font-size: 1rem;
-    }
+    
+    /* Réorganisation de l'ordre pour alterner Image -> Texte -> Image -> Texte */
+    .media-frame > .sticky-img:nth-child(1) { order: 1; }
+    .scrolling-content-col > .content-slide:nth-child(1) { order: 2; }
+    
+    .media-frame > .sticky-img:nth-child(2) { order: 3; }
+    .scrolling-content-col > .content-slide:nth-child(2) { order: 4; }
+    
+    .media-frame > .sticky-img:nth-child(3) { order: 5; }
+    .scrolling-content-col > .content-slide:nth-child(3) { order: 6; }
+    
+    .media-frame > .sticky-img:nth-child(4) { order: 7; }
+    .scrolling-content-col > .content-slide:nth-child(4) { order: 8; }
 }
 
 @media (max-width: 768px) {
