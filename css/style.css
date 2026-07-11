@@ -1300,17 +1300,19 @@ footer {
 
     /* Fix Hero Image Framing on Mobile */
     .hero {
-        background-position: 35% center !important; /* Décale l'image pour mieux centrer les combattants */
+        background-position: center top !important; /* Centre l'image en haut pour privilégier les visages/l'action */
+        align-items: flex-end !important; /* Pousse le texte vers le bas de l'écran */
+        padding-bottom: 3rem !important; /* Laisse de l'espace en bas */
     }
     
     .hero-overlay {
-        /* Assombrit légèrement l'overlay sur mobile pour que le texte soit plus lisible par dessus l'image */
-        background: linear-gradient(to bottom, rgba(3, 8, 20, 0.7) 0%, rgba(3, 8, 20, 0.5) 40%, rgba(3, 8, 20, 0.85) 100%) !important;
+        /* Assombrit uniquement le bas de l'écran où se trouve le texte, laisse le haut clair pour voir les combattants */
+        background: linear-gradient(to bottom, rgba(3, 8, 20, 0.1) 0%, rgba(3, 8, 20, 0.5) 40%, rgba(3, 8, 20, 0.95) 100%) !important;
     }
     
     .hero-logo-img {
-        max-width: 220px; /* Logo slightly smaller on mobile to free up image space */
-        margin-bottom: 1.5rem;
+        max-width: 200px; /* Logo légèrement plus petit */
+        margin-bottom: 1rem;
     }
 }
 
