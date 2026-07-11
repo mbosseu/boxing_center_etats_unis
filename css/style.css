@@ -1255,8 +1255,7 @@ footer {
 
 @media (max-width: 768px) {
     .grid-2 {
-        display: flex;
-        flex-direction: column-reverse; /* Affiche l'image en premier, puis le texte en dessous */
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
     
