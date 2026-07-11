@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Boxing Center pour réserver votre séance d'essai ou poser vos questions. Formulaire d'inscription et coordonnées.">
+    <title>Nos Plannings - Boxing Center Toulouse États-Unis</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-banner {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+        }
+        .contact-form-wrapper {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .contact-form-wrapper {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-link">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Logo" class="header-logo">
+            </a>
+            
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="disciplines.html" class="nav-link">Disciplines</a></li>
+                <li class="nav-item active"><a href="planning.html" class="nav-link">Plannings</a></li>
+                <li class="nav-item"><a href="clubs.html" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="nav-link">Séance d'essai</a></li>
+                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/" target="_blank" class="nav-link">Boutique</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Séance d'essai</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem;">Nos <span>Plannings</span></h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">Découvrez les horaires de tous nos cours par zone de pratique.</p>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: var(--bg-primary);">
+        <div class="container">
+            <style>
+                .planning-tabs {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.5rem;
+                    margin-bottom: 4rem;
+                    flex-wrap: wrap;
+                }
+                .planning-tab {
+                    background: transparent;
+                    color: var(--text-secondary);
+                    border: 2px solid var(--border-color);
+                    padding: 1rem 2.5rem;
+                    border-radius: 50px;
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 1.1rem;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    position: relative;
+                }
+                .planning-tab:hover {
+                    color: var(--white);
+                    border-color: var(--bronze);
+                    background-color: rgba(193, 154, 107, 0.1);
+                }
+                .planning-tab.active {
+                    background-color: var(--bronze);
+                    color: var(--bg-primary);
+                    border-color: var(--bronze);
+                    font-weight: 700;
+                    box-shadow: 0 5px 15px rgba(193, 154, 107, 0.3);
+                }
+                .planning-content {
+                    display: none;
+                    animation: fadeInUp 0.6s ease forwards;
+                    background-color: var(--bg-secondary);
+                    padding: 3rem;
+                    border-radius: var(--border-radius-lg);
+                    border: 1px solid var(--border-color);
+                    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+                    text-align: center;
+                }
+                .planning-content.active {
+                    display: block;
+                }
+                .planning-header {
+                    margin-bottom: 2.5rem;
+                }
+                .planning-title {
+                    font-size: 2rem;
+                    color: var(--white);
+                    margin-bottom: 0.5rem;
+                }
+                .planning-subtitle {
+                    color: var(--bronze-light);
+                    font-size: 1.1rem;
+                    font-family: 'Oswald', sans-serif;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                .planning-img-wrapper {
+                    background-color: #ffffff; /* White background in case the screenshot is transparent */
+                    padding: 1rem;
+                    border-radius: var(--border-radius-sm);
+                    display: inline-block;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                }
+                .planning-content img {
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                }
+                @keyframes fadeInUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @media (max-width: 768px) {
+                    .planning-tab {
+                        width: 100%;
+                    }
+                    .planning-content {
+                        padding: 1.5rem;
+                    }
+                }
+            </style>
+
+            <div class="planning-tabs" id="planningTabs">
+                <button class="planning-tab active" data-target="tab-anglaise">Boxe & Muay Thaï</button>
+                <button class="planning-tab" data-target="tab-mma">MMA & Grappling</button>
+                <button class="planning-tab" data-target="tab-muscu">Cross-Training</button>
+            </div>
+
+            <div style="max-width: 1100px; margin: 0 auto;">
+                <div class="planning-content active" id="tab-anglaise">
+                    <div class="planning-header">
+                        <h2 class="planning-title">Ring & Espace Frappe</h2>
+                        <div class="planning-subtitle">Horaires Boxe Anglaise & Muay Thaï</div>
+                    </div>
+                    <div class="planning-img-wrapper">
+                        <img src="planning/Screenshot 2026-07-11 144614.png" alt="Planning Boxe Anglaise et Muay Thai">
+                    </div>
+                </div>
+
+                <div class="planning-content" id="tab-mma">
+                    <div class="planning-header">
+                        <h2 class="planning-title">La Cage</h2>
+                        <div class="planning-subtitle">Horaires MMA & Grappling</div>
+                    </div>
+                    <div class="planning-img-wrapper">
+                        <img src="planning/Screenshot 2026-07-11 144627.png" alt="Planning MMA">
+                    </div>
+                </div>
+
+                <div class="planning-content" id="tab-muscu">
+                    <div class="planning-header">
+                        <h2 class="planning-title">Zone Musculation</h2>
+                        <div class="planning-subtitle">Horaires Cross-Training & Préparation Physique</div>
+                    </div>
+                    <div class="planning-img-wrapper">
+                        <img src="planning/Screenshot 2026-07-11 144635.png" alt="Planning Cross-Training">
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 5rem;">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Réserver ma séance d'essai</a>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const tabs = document.querySelectorAll('.planning-tab');
+                    const contents = document.querySelectorAll('.planning-content');
+
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            tabs.forEach(t => t.classList.remove('active'));
+                            contents.forEach(c => c.classList.remove('active'));
+
+                            tab.classList.add('active');
+                            const targetId = tab.getAttribute('data-target');
+                            document.getElementById(targetId).classList.add('active');
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Colonne 1 : Logo & Infos -->
+            <div class="footer-about">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" style="margin-bottom: 1.5rem;">
+                <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 388 Ave. des États-Unis, Toulouse</li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:0562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:boxingcenter31@gmail.com" style="text-decoration:none; color:inherit;">boxingcenter31@gmail.com</a></li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 2 : Horaires -->
+            <div>
+                <h3 class="footer-title">Horaires Club</h3>
+                <ul class="footer-hours-list">
+                    <li><span>Lundi - Samedi</span> <span>10:00 - 21:30</span></li>
+                    <li><span>Dimanche</span> <span>Fermé</span></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Liens Essentiels & Réseaux -->
+            <div>
+                <h3 class="footer-title">Boxing Center</h3>
+                <ul class="footer-links" style="margin-bottom: 2rem;">
+                    <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
+                    <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom" style="justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+            <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez nos cours de Boxe Anglaise, MMA, Muay Thai et Cardio Boxing chez Boxing Center. Entraînement premium tous niveaux.">
+    <title>Nos Disciplines - Boxing Center Toulouse États-Unis</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-banner {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .discipline-row {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+        .discipline-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .discipline-img-wrapper {
+            flex: 1;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            height: 400px;
+        }
+        .discipline-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        .discipline-img-wrapper:hover .discipline-img {
+            transform: scale(1.05);
+        }
+        .discipline-info {
+            flex: 1.2;
+        }
+        .discipline-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .discipline-meta-item {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .discipline-meta-item strong {
+            color: var(--bronze-light);
+        }
+        .benefits-list {
+            list-style: none;
+            margin: 1.5rem 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .benefit-item svg {
+            color: var(--bronze);
+            flex-shrink: 0;
+        }
+        @media (max-width: 992px) {
+            .discipline-row, .discipline-row:nth-child(even) {
+                flex-direction: column;
+                gap: 2rem;
+                margin-bottom: 4rem;
+            }
+            .discipline-img-wrapper {
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-link">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center Logo" class="header-logo">
+            </a>
+            
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                <li class="nav-item active"><a href="disciplines.html" class="nav-link">Disciplines</a></li>
+                <li class="nav-item"><a href="planning.html" class="nav-link">Plannings</a></li>
+                <li class="nav-item"><a href="clubs.html" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="nav-link">Séance d'essai</a></li>
+                <li class="nav-item"><a href="https://boutique.boxingcenter.fr/" target="_blank" class="nav-link">Boutique</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Séance d'essai</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem;">Nos <span>Disciplines</span></h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">Du perfectionnement technique au dépassement cardio, explorez des programmes d'entraînement variés dispensés par des professionnels qualifiés.</p>
+        </div>
+    </section>
+
+    <!-- Detailed Disciplines Section -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Boxe Anglaise -->
+            <div class="discipline-row">
+                <div class="discipline-img-wrapper">
+                    <img src="photo_salle/DSC01026 (1).jpg" alt="Boxe Anglaise" class="discipline-img">
+                </div>
+                <div class="discipline-info">
+                    <span class="feature-tag">Technique & Rigueur</span>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Boxe Anglaise <span>(Noble Art)</span></h2>
+                    <p>La boxe anglaise est la discipline reine des poings. Axé sur la précision, la vitesse de réaction, la esquive et le déplacement, ce cours développe une condition physique exceptionnelle tout en enseignant les bases techniques et tactiques du Noble Art.</p>
+                    
+
+
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--white);">Bénéfices clés :</h4>
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Cardio & Perte de poids</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Réflexes & Coordination</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Renforcement du haut du corps</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Confiance & Discipline</span>
+                        </li>
+                    </ul>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Essayer la Boxe</a>
+                        <a href="planning.html" class="btn btn-secondary">Voir le planning</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MMA -->
+            <div class="discipline-row">
+                <div class="discipline-img-wrapper">
+                    <img src="photo_salle/mma_cage.png" alt="Mixed Martial Arts" class="discipline-img">
+                </div>
+                <div class="discipline-info">
+                    <span class="feature-tag">Polyvalence & Performance</span>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Mixed Martial Arts <span>(MMA)</span></h2>
+                    <p>Le MMA combine les meilleures techniques de combat debout (Boxe, Muay Thai), de projections (Lutte, Judo) et de combat au sol (Jiu-Jitsu Brésilien). Nos cours sont structurés de manière à aborder chaque distance en toute sécurité, de l'apprentissage technique au sparring à thèmes.</p>
+                    
+
+
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--white);">Bénéfices clés :</h4>
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Force & Explosivité globale</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Maîtrise du combat au sol</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Condition physique extrême</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Défense personnelle complète</span>
+                        </li>
+                    </ul>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Essayer le MMA</a>
+                        <a href="planning.html" class="btn btn-secondary">Voir le planning</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Muay Thai -->
+            <div class="discipline-row">
+                <div class="discipline-img-wrapper">
+                    <img src="photo_salle/taii.png" alt="Muay Thai" class="discipline-img">
+                </div>
+                <div class="discipline-info">
+                    <span class="feature-tag">Puissance & Tradition</span>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Muay Thai <span>(Boxe Thaïlandaise)</span></h2>
+                    <p>Appelé l'Art des 8 membres, le Muay Thai intègre les frappes de poings, pieds, coudes, genoux, ainsi que des techniques de corps à corps (clinch) et de projections. C'est une discipline particulièrement exigeante au niveau cardio et musculaire, idéale pour forger un mental d'acier.</p>
+                    
+
+
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--white);">Bénéfices clés :</h4>
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Renforcement des jambes & abdos</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Flexibilité & Mobilité</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Puissance de frappe (pieds/genoux)</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Dépassement de soi</span>
+                        </li>
+                    </ul>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Essayer le Muay Thai</a>
+                        <a href="planning.html" class="btn btn-secondary">Voir le planning</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cardio Boxing / Sacs -->
+            <div class="discipline-row">
+                <div class="discipline-img-wrapper">
+                    <img src="photo_salle/ChatGPT Image 20 juin 2026, 13_18_30.png" alt="Séance de Cross-Training" class="discipline-img">
+                </div>
+                <div class="discipline-info">
+                    <span class="feature-tag">Force & Endurance</span>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Cross-Training & <span>Préparation Physique</span></h2>
+                    <p>Dépassez vos limites avec nos séances de cross-training. Une méthode d'entraînement intense et fonctionnelle combinant haltérophilie, gymnastique et cardio. Parfait en complément des sports de combat ou comme discipline principale pour forger un corps athlétique.</p>
+                    
+
+
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--white);">Bénéfices clés :</h4>
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Dépense calorique maximale (+800 kcal)</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Défoulement total & Gestion du stress</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Tonification musculaire globale</span>
+                        </li>
+                        <li class="benefit-item">
+                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Sans opposition (idéal pour démarrer)</span>
+                        </li>
+                    </ul>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Essayer le Cross-Training</a>
+                        <a href="planning.html" class="btn btn-secondary">Voir le planning</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section section-bg-alt" style="text-align: center; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem;">Prêt à enfiler les gants ?</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-secondary);">Venez tester l'un de nos cours . Nos coaches adapteront les exercices à votre condition physique actuelle.</p>
+            <a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html#/31-salle_principale_d_entrainement-toulouse_st_cyprien/36-choix_discipline-boxe_anglaise" target="_blank" class="btn btn-primary double-outline-element">Réserver mon cours d'essai</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <!-- Colonne 1 : Logo & Infos -->
+            <div class="footer-about">
+                <img src="logo/logo_transparent_v2.png" alt="Boxing Center" class="footer-logo-img" style="margin-bottom: 1.5rem;">
+                <ul class="footer-links" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 388 Ave. des États-Unis, Toulouse</li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:0562244682" style="text-decoration:none; color:inherit;">05 62 24 46 82</a></li>
+                    <li><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:boxingcenter31@gmail.com" style="text-decoration:none; color:inherit;">boxingcenter31@gmail.com</a></li>
+                </ul>
+            </div>
+            
+            <!-- Colonne 2 : Horaires -->
+            <div>
+                <h3 class="footer-title">Horaires Club</h3>
+                <ul class="footer-hours-list">
+                    <li><span>Lundi - Samedi</span> <span>10:00 - 21:30</span></li>
+                    <li><span>Dimanche</span> <span>Fermé</span></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Liens Essentiels & Réseaux -->
+            <div>
+                <h3 class="footer-title">Boxing Center</h3>
+                <ul class="footer-links" style="margin-bottom: 2rem;">
+                    <li><a href="https://boutique.boxingcenter.fr/abonnements/88-2352-seance-d-essai-activite-au-choix.html" target="_blank" style="color: var(--bronze); font-weight:700;">Réserver une Séance d'essai</a></li>
+                    <li><a href="https://boutique.boxingcenter.fr/" target="_blank">Boutique Officielle</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom" style="justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+            <p>&copy; 2026 Boxing Center Toulouse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
