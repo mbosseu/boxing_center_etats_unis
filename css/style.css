@@ -1269,17 +1269,24 @@ footer {
         gap: 0;
     }
     
-    /* Mobile overrides for inline bento blocks in clubs.html */
+    /* Mobile overrides for inline immersive blocks in clubs.html & index.html */
     section .container > div[style*="min-height"] {
-        padding: 2rem !important;
-        min-height: 350px !important;
+        padding: 2rem 1.5rem !important;
+        min-height: 80vh !important;
         flex-direction: column !important;
-        justify-content: center !important;
+        justify-content: flex-end !important; /* Push content to bottom */
+    }
+    
+    /* Override horizontal gradients to vertical so text is readable on mobile */
+    section .container > div[style*="min-height"] > div:nth-child(2) {
+        background: linear-gradient(180deg, rgba(15,15,15,0) 0%, rgba(15,15,15,0.6) 40%, rgba(15,15,15,0.95) 100%) !important;
     }
     
     section .container > div[style*="min-height"] > div:last-child {
         text-align: center !important;
         padding-top: 1.5rem !important;
+        margin-top: auto; /* Ensure it stays at bottom */
+        width: 100% !important;
     }
     
     /* Smaller hero text on mobile */

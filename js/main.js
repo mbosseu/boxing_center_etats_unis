@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetUrl.startsWith('#') || 
                 targetUrl.startsWith('tel:') || 
                 targetUrl.startsWith('mailto:') ||
-                this.getAttribute('target') === '_blank' ||
                 e.ctrlKey || e.metaKey) {
                 return;
             }
@@ -39,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if(targetUrl.includes('disciplines.html')) destName = "Disciplines";
                 else if(targetUrl.includes('planning.html')) destName = "Plannings";
                 else if(targetUrl.includes('contact.html')) destName = "Contact";
+                else if(targetUrl.includes('boutique.boxingcenter.fr')) destName = "Boutique & Réservations";
                 else if(targetUrl.includes('index.html') || targetUrl === '/' || targetUrl === './') destName = "Accueil";
-                else destName = "Chargement...";
+                else destName = "Redirection...";
             }
 
             loaderText.textContent = destName;
