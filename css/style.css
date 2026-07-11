@@ -1297,6 +1297,21 @@ footer {
     .section-title {
         font-size: 2rem;
     }
+
+    /* Fix Hero Image Framing on Mobile */
+    .hero {
+        background-position: 35% center !important; /* Décale l'image pour mieux centrer les combattants */
+    }
+    
+    .hero-overlay {
+        /* Assombrit légèrement l'overlay sur mobile pour que le texte soit plus lisible par dessus l'image */
+        background: linear-gradient(to bottom, rgba(3, 8, 20, 0.7) 0%, rgba(3, 8, 20, 0.5) 40%, rgba(3, 8, 20, 0.85) 100%) !important;
+    }
+    
+    .hero-logo-img {
+        max-width: 220px; /* Logo slightly smaller on mobile to free up image space */
+        margin-bottom: 1.5rem;
+    }
 }
 
 @media (max-width: 576px) {
