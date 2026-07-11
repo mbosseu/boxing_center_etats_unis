@@ -166,42 +166,20 @@
                 }
             </style>
 
-            <div class="planning-tabs" id="planningTabs">
-                <button class="planning-tab active" data-target="tab-anglaise">Boxe & Muay Thaï</button>
-                <button class="planning-tab" data-target="tab-mma">MMA & Grappling</button>
-                <button class="planning-tab" data-target="tab-muscu">Cross-Training</button>
-            </div>
-
-            <div style="max-width: 1100px; margin: 0 auto;">
-                <div class="planning-content active" id="tab-anglaise">
-                    <div class="planning-header">
-                        <h2 class="planning-title">Ring & Espace Frappe</h2>
-                        <div class="planning-subtitle">Horaires Boxe Anglaise & Muay Thaï</div>
-                    </div>
-                    <div class="planning-img-wrapper">
-                        <img src="planning/Screenshot 2026-07-11 144614.png" alt="Planning Boxe Anglaise et Muay Thai">
-                    </div>
+            <!-- Simplified Planning Section -->
+            <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+                
+                <div class="planning-img-wrapper" id="planningImageWrapper" style="display: block; margin-bottom: 2rem;">
+                    <!-- The image will be updated via JS -->
+                    <img id="currentPlanningImg" src="planning/Screenshot 2026-07-11 144614.png" alt="Planning Boxe Anglaise et Muay Thai">
                 </div>
 
-                <div class="planning-content" id="tab-mma">
-                    <div class="planning-header">
-                        <h2 class="planning-title">La Cage</h2>
-                        <div class="planning-subtitle">Horaires MMA & Grappling</div>
-                    </div>
-                    <div class="planning-img-wrapper">
-                        <img src="planning/Screenshot 2026-07-11 144627.png" alt="Planning MMA">
-                    </div>
-                </div>
+                <!-- Simple Next Button -->
+                <button id="nextPlanningBtn" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: transparent; color: var(--bronze); border-color: var(--bronze);">
+                    Planning Suivant
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
 
-                <div class="planning-content" id="tab-muscu">
-                    <div class="planning-header">
-                        <h2 class="planning-title">Zone Musculation</h2>
-                        <div class="planning-subtitle">Horaires Cross-Training & Préparation Physique</div>
-                    </div>
-                    <div class="planning-img-wrapper">
-                        <img src="planning/Screenshot 2026-07-11 144635.png" alt="Planning Cross-Training">
-                    </div>
-                </div>
             </div>
             
             <div style="text-align: center; margin-top: 5rem;">
@@ -210,18 +188,28 @@
 
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
-                    const tabs = document.querySelectorAll('.planning-tab');
-                    const contents = document.querySelectorAll('.planning-content');
+                    const images = [
+                        { src: 'planning/Screenshot 2026-07-11 144614.png', alt: 'Planning Boxe Anglaise et Muay Thai' },
+                        { src: 'planning/Screenshot 2026-07-11 144627.png', alt: 'Planning MMA' },
+                        { src: 'planning/Screenshot 2026-07-11 144635.png', alt: 'Planning Cross-Training' }
+                    ];
+                    let currentIndex = 0;
+                    const imgElement = document.getElementById('currentPlanningImg');
+                    const nextBtn = document.getElementById('nextPlanningBtn');
+                    
+                    // Add smooth transition to the image
+                    imgElement.style.transition = 'opacity 0.3s ease';
 
-                    tabs.forEach(tab => {
-                        tab.addEventListener('click', () => {
-                            tabs.forEach(t => t.classList.remove('active'));
-                            contents.forEach(c => c.classList.remove('active'));
-
-                            tab.classList.add('active');
-                            const targetId = tab.getAttribute('data-target');
-                            document.getElementById(targetId).classList.add('active');
-                        });
+                    nextBtn.addEventListener('click', () => {
+                        currentIndex = (currentIndex + 1) % images.length;
+                        
+                        // Simple fade effect
+                        imgElement.style.opacity = '0';
+                        setTimeout(() => {
+                            imgElement.src = images[currentIndex].src;
+                            imgElement.alt = images[currentIndex].alt;
+                            imgElement.style.opacity = '1';
+                        }, 300);
                     });
                 });
             </script>
