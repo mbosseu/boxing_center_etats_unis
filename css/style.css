@@ -1309,14 +1309,16 @@ footer {
 
     /* Fix Hero Image Framing on Mobile */
     .hero {
-        background-position: center top !important; /* Centre l'image en haut pour privilégier les visages/l'action */
-        align-items: flex-end !important; /* Pousse le texte vers le bas de l'écran */
-        padding-bottom: 3rem !important; /* Laisse de l'espace en bas */
+        background-position: 85% center !important; /* Cible précisément le visage du combattant de droite */
+        align-items: center !important; /* On garde le texte globalement centré */
+    }
+    
+    .hero-content {
+        margin-top: 30vh !important; /* On descend le texte pour dégager complètement le visage au centre/haut de l'écran */
     }
     
     .hero-overlay {
-        /* Assombrit uniquement le bas de l'écran où se trouve le texte, laisse le haut clair pour voir les combattants */
-        background: linear-gradient(to bottom, rgba(3, 8, 20, 0.1) 0%, rgba(3, 8, 20, 0.5) 40%, rgba(3, 8, 20, 0.95) 100%) !important;
+        background: linear-gradient(to bottom, rgba(3, 8, 20, 0.2) 0%, rgba(3, 8, 20, 0.6) 50%, rgba(3, 8, 20, 0.95) 100%) !important;
     }
     
     .hero-logo-img {
