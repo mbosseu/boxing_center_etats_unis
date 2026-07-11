@@ -1206,48 +1206,48 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Responsive Sticky Scroll - Split Screen Mobile */
+    /* Restore PC Sticky Scroll Effect on Mobile (Side-by-Side) */
     .sticky-scroll-section {
-        padding: 0;
+        padding: 2rem 0;
     }
     .sticky-scroll-container {
-        display: block; /* Disable flex column so sticky works natively */
+        display: flex;
+        flex-direction: row; /* Force l'affichage côte à côte comme sur PC */
+        gap: 1rem; /* Réduit l'espace pour que ça rentre */
     }
     .sticky-media-col {
+        flex: 1;
         position: sticky;
-        top: 80px; /* Just below the header */
-        height: 45vh; /* Top 45% of the screen */
-        width: 100%;
-        z-index: 5; /* Keep it above the text that scrolls up */
-        background: var(--bg-primary); /* Prevent transparency issues */
+        top: 100px; /* Sous le header */
+        height: 60vh; /* Hauteur adaptée au mobile */
+        z-index: 1;
     }
     .media-frame {
         height: 100%;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
+        border-radius: var(--border-radius-sm);
     }
     .scrolling-content-col {
-        position: relative;
-        z-index: 1; /* Scrolls behind the sticky media */
-        width: 100%;
-        padding: 0 1.5rem;
-        padding-bottom: 10vh; /* Extra space at the end */
+        flex: 1.2;
+        z-index: 2;
     }
     .content-slide {
-        min-height: 55vh; /* Each text block takes up the bottom 55% */
-        padding: 2.5rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        opacity: 1 !important; /* Always visible on mobile */
+        min-height: 100vh; /* Pour le déclenchement du scroll */
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-    .content-slide:last-child {
+        padding: 1rem 0;
+        opacity: 1 !important;
         border-bottom: none;
     }
     .slide-title {
-        font-size: 2.2rem;
+        font-size: 1.6rem; /* Texte plus petit pour rentrer dans la colonne */
+        word-wrap: break-word;
+    }
+    .slide-desc {
+        font-size: 0.95rem;
+    }
+    .slide-link {
+        font-size: 1rem;
     }
 }
 
