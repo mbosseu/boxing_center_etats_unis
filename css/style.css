@@ -3974,3 +3974,14 @@ body.page-abonnements {
         max-width: 22rem;
     }
 }
+
+/* Prix affiché « 36€99 » : l'entier porte le chiffre, les centimes restent exacts en exposant. */
+.px { font-style: normal; }
+.px-c {
+    font-size: 0.45em;
+    line-height: 0;
+    vertical-align: 0.86em;
+    margin-left: 0.05em;
+    font-weight: 700;
+    letter-spacing: 0;
+}
